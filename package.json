@@ -1,0 +1,23 @@
+{
+  "main": "source/index.html",
+  "name": "muv-conf",
+  "description": "MUV Conf",
+  "version": "0.9.0",
+  "keywords": [ "SIP", "video", "VoIP", "multi-user", "chat", "conference" ],
+  "nodejs": true,
+  "single-instance": true,
+  "window": {
+    "show": true,
+    "toolbar": true,
+    "width": 1280,
+    "height": 800,
+    "min_width": 420,
+    "min_height": 480,
+    "debug": true
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "chromium-args": "--disable-web-security",
+  "permissions": [ "experimental", "videoCapture", "audioCapture" ]
+}

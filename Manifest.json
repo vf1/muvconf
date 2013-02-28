@@ -1,0 +1,34 @@
+{
+  "info" : 
+  {
+    "name" : "muvconf",
+
+    "summary" : "Multi-user video conferences software",
+    "description" : "Multi-user video conferences SIP client.",
+    
+    "homepage" : "http://some.homepage.url/",
+
+    "license" : "GPL",
+    "authors" : 
+    [
+      {
+        "name" : "Vitali Fomine",
+        "email" : "first.author@some.domain"
+      }
+    ],
+
+    "version" : "trunk",
+    "qooxdoo-versions": ["2.1.1"]
+  },
+  
+  "provides" : 
+  {
+    "namespace"   : "muvconf",
+    "encoding"    : "utf-8",
+    "class"       : "source/class",
+    "resource"    : "source/resource",
+    "translation" : "source/translation",
+    "type"        : "application"
+  }
+}
+
