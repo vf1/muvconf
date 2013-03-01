@@ -53,6 +53,7 @@
     "additional-js" : { 
       "add-script" : [
            { "uri" : "resource/muvconf/jssip-0.2.1.js" },
+           { "uri" : "resource/muvconf/NodeWebkit.js" },
            { "uri" : "resource/muvconf/jquery-1.9.1.min.js" }
 	] 
     }, 

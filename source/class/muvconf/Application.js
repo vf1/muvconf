@@ -175,6 +175,9 @@ qx.Class.define("muvconf.Application",
 
 			this._signinWindow.setData(signinData);
 			this._signinWindow.show();
+			
+			this._nodeWebkit = new NodeWebkit(this.proxy(this._signoutHandler));
+			this._nodeWebkit.showWindow();
 		},
 
 		interval1: null,
@@ -199,6 +202,7 @@ qx.Class.define("muvconf.Application",
 		_log: null,
 		_messages: {},
 		_desktop: null,
+		_nodeWebkit: null,
 		
 		_confId: null,
 		_localVideo: null,
@@ -229,7 +233,9 @@ qx.Class.define("muvconf.Application",
 					this._call(participant.getUri());
 				}
 				
-				if(participant.getState() == muvconf.Participant.FAILED) {
+				if(participant.getState() == muvconf.Participant.FAILED || 
+					participant.getState() == muvconf.Participant.ENDED) {
+					
 					if(participant.decRestoreCount())
 						participant.setState(muvconf.Participant.ADDED);
 				}

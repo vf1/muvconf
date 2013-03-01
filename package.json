@@ -7,7 +7,7 @@
   "nodejs": true,
   "single-instance": true,
   "window": {
-    "show": true,
+    "show": false,
     "toolbar": true,
     "width": 1280,
     "height": 800,
