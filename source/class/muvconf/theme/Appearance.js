@@ -14,5 +14,15 @@ qx.Theme.define("muvconf.theme.Appearance",
 
   appearances :
   {
+    "window/icon" :
+    {
+      style : function(states)
+      {
+        return {
+          marginTop : 4,
+          marginRight : 4
+        };
+      }
+    }
   }
 });

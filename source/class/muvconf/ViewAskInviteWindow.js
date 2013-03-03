@@ -5,7 +5,7 @@ qx.Class.define("muvconf.ViewAskInviteWindow",
 
 	construct: function(data) {
 
-		this.base(arguments, 'Wants to join');
+		this.base(arguments, 'Wants to join', 'resource/muvconf/xask.png');
 
 		this.__data = data;
 		

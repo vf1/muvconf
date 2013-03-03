@@ -77,12 +77,12 @@ qx.Class.define("muvconf.Application",
 				this._signinWindow.getWindow(), logWindow, this._askInviteWindow];
 
 				
-			this._buttons.invite = this.createButtonForWindow('Invite', this._inviteWindow.getWindow());
-			this._buttons.join = this.createButtonForWindow('Join', this._askInviteWindow);
-			this._buttons.leave = new qx.ui.toolbar.Button('Leave');
+			this._buttons.invite = this.createButtonForWindow('Invite', this._inviteWindow.getWindow(), 'resource/muvconf/xadd.png');
+			this._buttons.join = this.createButtonForWindow('Join', this._askInviteWindow, 'resource/muvconf/xask.png');
+			this._buttons.leave = new qx.ui.toolbar.Button('Leave', 'resource/muvconf/xleave.png');
 			this._buttons.invite.addListener('appear', function() {
 				var hint = this._buttons.invite.getSizeHint();
-				this._buttons.join.setWidth(hint.width);
+				//this._buttons.join.setWidth(hint.width);
 			}, this);
 
 			this._buttons.leave.addListener('execute', this._leaveConference, this);
@@ -93,12 +93,12 @@ qx.Class.define("muvconf.Application",
 
 
 			var toolbar = new qx.ui.toolbar.ToolBar();
-			toolbar.add(this.createButtonForWindow('Sign in / out', this._signinWindow.getWindow()))
+			toolbar.add(this.createButtonForWindow('Sign in / out', this._signinWindow.getWindow(), 'resource/muvconf/xkey.png'))
 			toolbar.add(new qx.ui.toolbar.Separator());
 			toolbar.add(inviteJoinPart);
 			toolbar.add(this._buttons.leave);
 			toolbar.add(new qx.ui.toolbar.Separator());
-			toolbar.add(this.createButtonForWindow('Participants', paricipantsWindow))
+			toolbar.add(this.createButtonForWindow('Participants', paricipantsWindow, 'resource/muvconf/xparticipants.png'))
 			
 			//--
 			/*

@@ -41,7 +41,7 @@ qx.Class.define("muvconf.InviteWindow",
 		
 		_createWindow: function() {
 
-			this.__window = new qx.ui.window.Window("Invite new participants");
+			this.__window = new qx.ui.window.Window('Invite new participants', 'resource/muvconf/xadd.png');
 			
 			this.__window.set({
 				showClose: false,

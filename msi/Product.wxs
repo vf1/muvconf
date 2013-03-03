@@ -35,12 +35,12 @@
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="ExeFiles" Guid="{5D733941-4C46-4694-9074-E817FB3957C1}">
-        <File Source="..\nw\ffmpegsumo.dll"></File>
-        <File Source="..\nw\icudt.dll"></File>
-        <File Source="..\nw\libEGL.dll"></File>
-        <File Source="..\nw\libGLESv2.dll"></File>
-        <File Source="..\nw\nw.pak"></File>
-        <File Source="..\nw\muvconf.exe"></File>
+        <File Source="..\nw\win32\ffmpegsumo.dll"></File>
+        <File Source="..\nw\win32\icudt.dll"></File>
+        <File Source="..\nw\win32\libEGL.dll"></File>
+        <File Source="..\nw\win32\libGLESv2.dll"></File>
+        <File Source="..\nw\win32\nw.pak"></File>
+        <File Source="..\nw\win32\muvconf.exe"></File>
       </Component>
     </ComponentGroup>
   </Fragment>

@@ -5,7 +5,7 @@ qx.Class.define("muvconf.AskInviteWindow",
 
 	construct: function() {
 
-		this.base(arguments, 'Ask invite');
+		this.base(arguments, 'Ask invite', 'resource/muvconf/xask.png');
 
 		this._create();
 	},

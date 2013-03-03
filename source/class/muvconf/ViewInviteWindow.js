@@ -5,7 +5,7 @@ qx.Class.define("muvconf.ViewInviteWindow",
 
 	construct: function(data) {
 
-		this.base(arguments, 'You got invite');
+		this.base(arguments, 'You got invite', 'resource/muvconf/xadd.png');
 
 		this.__data = data;
 		

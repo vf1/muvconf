@@ -15,9 +15,9 @@ qx.Mixin.define("muvconf.GuiTasks",
 			}); 
 		},
 	
-		createButtonForWindow: function(text, window) {
+		createButtonForWindow: function(text, window, icon) {
 		
-			var button = new qx.ui.toolbar.Button(text);
+			var button = new qx.ui.toolbar.Button(text, icon);
 			
 			button.addListener('execute', function() {
 				window.show();
@@ -125,7 +125,7 @@ qx.Mixin.define("muvconf.GuiTasks",
 
 		createLogWindow: function(control) {
 		
-			var window = new qx.ui.window.Window("Log");
+			var window = new qx.ui.window.Window('Log', 'resource/muvconf/xlog.png');
 			window.set({
 				showClose: false,
 				showMaximize: false,
@@ -157,7 +157,7 @@ qx.Mixin.define("muvconf.GuiTasks",
 				}
 			});
 
-			var window = new qx.ui.window.Window("Participants");
+			var window = new qx.ui.window.Window('Participants', 'resource/muvconf/xparticipants.png');
 			window.set({
 				showClose: false,
 				showMaximize: false,

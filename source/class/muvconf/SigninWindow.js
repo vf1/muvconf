@@ -49,7 +49,7 @@ qx.Class.define("muvconf.SigninWindow",
 		
 		_createWindow: function() {
 
-			this.__window = new qx.ui.window.Window("Sign in");
+			this.__window = new qx.ui.window.Window('Sign in', 'resource/muvconf/xkey.png');
 			
 			this.__window.set({
 				showClose: false,

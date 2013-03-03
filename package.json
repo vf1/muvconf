@@ -8,7 +8,8 @@
   "single-instance": true,
   "window": {
     "show": false,
-    "toolbar": true,
+    "toolbar": false,
+    "icon": "resource/muvconf/icon.png",
     "width": 1280,
     "height": 800,
     "min_width": 420,
