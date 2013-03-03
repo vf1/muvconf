@@ -1,1 +1,6 @@
 source/script
+build
+*.suo
+msi/bin
+msi/obj
+nw

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="MUVConf" Language="1033" Version="1.0.0.0" Manufacturer="Vitali Fomine" UpgradeCode="0ac46f0d-d0b3-484a-8bb1-e82afaaaf100">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes" />
+
+    <Feature Id="ProductFeature" Title="MUVConf" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationStartMenu" />
+    </Feature>
+
+    <!-- Installer's Icon in Add/Remove Programs -->
+    <Icon Id="Main.ico" SourceFile="..\source\resource\muvconf\icon.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="Main.ico" />
+
+    <!-- UI -->
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+    <UIRef Id="WixUI_InstallDir" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+    <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="MUVConf" />
+      </Directory>
+      <Directory Id="ProgramMenuFolder"></Directory>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ExeFiles" Guid="{5D733941-4C46-4694-9074-E817FB3957C1}">
+        <File Source="..\nw\ffmpegsumo.dll"></File>
+        <File Source="..\nw\icudt.dll"></File>
+        <File Source="..\nw\libEGL.dll"></File>
+        <File Source="..\nw\libGLESv2.dll"></File>
+        <File Source="..\nw\nw.pak"></File>
+        <File Source="..\nw\muvconf.exe"></File>
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <DirectoryRef Id="ProgramMenuFolder">
+      <Component Id="ApplicationStartMenu" Guid="{56D0AA38-7E9C-41DC-94DE-6803024ADE1E}">
+        <Shortcut Id="MUVConfShortcut1"
+                  Name="Multi-User Video Conference"
+                  Description="Multi-User Video Conference"
+                  Icon="Main.ico"
+                  Target="[INSTALLFOLDER]MUVConf.exe"
+                  WorkingDirectory="INSTALLFOLDER"/>
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\MUVConf" Name="startmenu" Type="integer" Value="1" KeyPath="yes"/>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+</Wix>

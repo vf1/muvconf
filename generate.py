@@ -24,6 +24,7 @@
 ##
 
 import sys, os, re, subprocess, codecs, optparse
+import shutil
 
 CMD_PYTHON = sys.executable
 QOOXDOO_PATH = '../../../../projects/tools/qooxdoo-2.1.1-sdk'
@@ -118,6 +119,23 @@ def getQxPath():
     path = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), path))
 
     return path
+	
+def buildNodeWebkit():
+    print '>>> Build node-webkit'
+	
+    shutil.rmtree("nw");
+    shutil.copytree("../../Tools/node-webkit-v0.4.2", "nw")
+	
+    shutil.copyfile("package.json", "build/package.json")
+    shutil.make_archive("nw/muvconf", format="zip", root_dir="build")
+	
+    destination = open("nw/muvconf.exe", 'wb')
+    shutil.copyfileobj(open("nw/nw.exe", 'rb'), destination)
+    shutil.copyfileobj(open("nw/muvconf.zip", 'rb'), destination)
+    destination.close()
+
+    shutil.copy("nw/muvconf.zip", "nw/muvconf.nw")
+    return
 
 os.chdir(os.path.dirname(os.path.abspath(sys.argv[0])))  # switch to skeleton dir
 qxpath = getQxPath()
@@ -146,4 +164,8 @@ else:
 
 cmd = " ".join(argList)
 retval = subprocess.call(cmd, shell=True)
+
+if "build" in ShellArgs:
+    buildNodeWebkit()
+
 sys.exit(retval)

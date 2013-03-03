@@ -1,7 +1,7 @@
 {
-  "main": "source/index.html",
-  "name": "muv-conf",
-  "description": "MUV Conf",
+  "main": "index.html",
+  "name": "muvconf",
+  "description": "Multi-User Video Conference",
   "version": "0.9.0",
   "keywords": [ "SIP", "video", "VoIP", "multi-user", "chat", "conference" ],
   "nodejs": true,
@@ -12,7 +12,7 @@
     "width": 1280,
     "height": 800,
     "min_width": 420,
-    "min_height": 480,
+    "min_height": 400,
     "debug": true
   },
   "webkit": {
