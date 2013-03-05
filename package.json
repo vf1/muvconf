@@ -11,10 +11,10 @@
     "toolbar": false,
     "icon": "resource/muvconf/icon.png",
     "width": 1280,
-    "height": 800,
+    "height": 720,
     "min_width": 420,
     "min_height": 400,
-    "debug": true
+    "debug": false
   },
   "webkit": {
     "plugin": true

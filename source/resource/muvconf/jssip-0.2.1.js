@@ -3902,11 +3902,12 @@ JsSIP.MediaSession.prototype = {
     var
       session = this,
       sent = false,
+	  sentFailture = 9007199254740992,
       stun_config = 'stun:'+this.session.ua.configuration.stun_server,
       servers = [{"url": stun_config}];
 
     this.peerConnection = new webkitRTCPeerConnection({"iceServers": servers});
-
+	
     this.peerConnection.onicecandidate = function(event) {
       if (event.candidate) {
         console.log(JsSIP.c.LOG_MEDIA_SESSION +'ICE candidate received: '+ event.candidate.candidate);
@@ -3917,15 +3918,19 @@ JsSIP.MediaSession.prototype = {
         if (!sent) { // Execute onSuccess just once.
           sent = true;
           onSuccess();
-        }
-        else {
-          onFailure();
+        } else {
+          if(sentFailture < new Date().getTime()) {
+            sentFailture = 9007199254740992;
+            onFailure();
+			console.warn('vf: fire onFailure event');
+          }
         }
       }
     };
 
     this.peerConnection.onopen = function() {
       console.log(JsSIP.c.LOG_MEDIA_SESSION +'Media session oppened');
+      sentFailture = new Date().getTime() + 5000;
     };
 
     this.peerConnection.onaddstream = function(mediaStreamEvent) {
@@ -3941,7 +3946,6 @@ JsSIP.MediaSession.prototype = {
     };
 
     this.peerConnection.onstatechange = function(e) {
-      console.log(e);
       console.warn('Status changed to: '+ this.readyState);
       console.warn('ICE state is: '+ this.iceState);
     };
