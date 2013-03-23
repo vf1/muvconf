@@ -6,7 +6,7 @@
     <ProductVersion>3.6</ProductVersion>
     <ProjectGuid>54f60f85-0879-4bb3-a9fa-b2d2a34973c7</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>MuvConfMsi</OutputName>
+    <OutputName>muvconf-0.9.0</OutputName>
     <OutputType>Package</OutputType>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
